@@ -18,7 +18,7 @@ rhn_channel "rhel-x86_64-server-optional-6" do
  	password "RHNPASSWORD"
  end
 ```
-Alternatively, you can set node['rhn-channels']['rhn_user'] and node['rhn-channels']['rhn_pass'] and simply do:
+Alternatively, you can set **node['rhn-channels']['rhn_user']** and **node['rhn-channels']['rhn_pass']** and simply do:
 ```ruby
 rhn_channel "rhel-x86_64-server-optional-6"
 ```
