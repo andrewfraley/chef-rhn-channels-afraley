@@ -1,14 +1,15 @@
 rhn-channels Cookbook
 =================
 
-Contains the rhn_channel definition to add RHN channels
+This cookbook contains a LWRP to manage RHN channel subscriptions.  This cookbook does not manage RHN node registration, for which you should use https://github.com/bflad/chef-rhn
 
-Use the optional_channel example recipe to add the RHEL6 optional channel to a system
+Github repo: https://github.com/andrewfraley/chef-rhn-channels
+
 
 Usage
 -----
 #### LWRP
-Add depends "rhn-channels" to your metadata.rb, then use the rhn_channel resource to add a channel to your system.
+Add depends "rhn-channels" to your metadata.rb, then use the rhn_channel resource to add a channel to your system.  Also see the included optional_repo.rb recipe for another example.
 
 ```ruby
 rhn_channel "rhel-x86_64-server-optional-6" do
@@ -17,7 +18,10 @@ rhn_channel "rhel-x86_64-server-optional-6" do
  	password "RHNPASSWORD"
  end
 ```
-
+Alternatively, you can set node['rhn-channels']['rhn_user'] and node['rhn-channels']['rhn_pass'] and simply do:
+```ruby
+rhn_channel "rhel-x86_64-server-optional-6"
+```
 License and Authors
 -------------------
 * License: MIT
