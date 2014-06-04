@@ -22,6 +22,12 @@ Alternatively, you can set **node['rhn-channels']['rhn_user']** and **node['rhn-
 ```ruby
 rhn_channel "rhel-x86_64-server-optional-6"
 ```
+
+TODO
+----
+* Add support for removing rhn-channels
+* Provide a list of available RHEL channels
+
 License and Authors
 -------------------
 * License: MIT
