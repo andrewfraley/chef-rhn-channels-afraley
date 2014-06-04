@@ -1,4 +1,4 @@
-name             'rhn-channels'
+subl name             'rhn-channels'
 maintainer       'Andy Fraley'
 maintainer_email 'andrew.fraley@gmail.com'
 license          'MIT'
