@@ -22,6 +22,7 @@ Alternatively, you can set **node['rhn-channels']['rhn_user']** and **node['rhn-
 ```ruby
 rhn_channel "rhel-x86_64-server-optional-6"
 ```
+Note that you do not need to set your username and password for RHEL 7
 
 TODO
 ----
