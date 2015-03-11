@@ -4,8 +4,8 @@ define :rhn_channel do
 	channel_name = params[:channel_name]
 	
 	if node['platform_version'].to_i < 7
- 		username = node['cook-rhn']['rhn_user']
-		password = node['cook-rhn']['rhn_pass']
+ 		username = node['rhn-channels']['rhn_user']
+		password = node['rhn-channels']['rhn_pass']
 
 		execute "adding rhn channel #{channel_name}" do
 			command "rhn-channel -a -c #{channel_name} -u #{username} -p #{password}"
