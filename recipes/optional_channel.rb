@@ -21,5 +21,6 @@ end
 # 	channel_name "rhel-x86_64-server-optional-6"
 # 	username "RHNUSERNAME"
 # 	password "RHNPASSWORD"
+# 	action :add
 # end
 
