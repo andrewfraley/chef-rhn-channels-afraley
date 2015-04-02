@@ -1,8 +1,13 @@
-name             'rhn-channels'
-maintainer       'Andy Fraley'
+name 'rhn-channels'
+maintainer 'Andy Fraley'
 maintainer_email 'andrew.fraley@gmail.com'
-license          'MIT'
-description      'Installs/Configures rhn-channels'
+license 'MIT'
+description 'Manages channel subscriptions to RHN satellite network.'
+long_description 'Manages channel subscriptions to RHN satellite network.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-supports 'redhat', ">= 6.0"
-version          '1.2.0'
+version '2.0.0'
+
+supports 'redhat', '>= 5.0'
+
+suggests 'chef-vault'
+suggests 'rhn'
