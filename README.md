@@ -50,8 +50,10 @@ end
 License and Authors
 -------------------
 * License: MIT
-* Author: https://github.com/andrewfraley
-* Author: Tenyo Grozev (tenyo.grozev@yale.edu)
+* Author: [Tenyo Grozev][3] (tenyo.grozev@yale.edu)
+* Author: [John Bellone][4] (jbellone@bloomberg.net)
 
 [1]: https://github.com/bflad/chef-rhn
 [2]: https://github.com/opscode-cookbooks/chef-vault
+[3]: https://github.com/andrewfraley
+[4]: https://github.com/johnbellone

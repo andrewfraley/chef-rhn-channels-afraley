@@ -1,4 +1,5 @@
 require 'chef/provider/lwrp_base'
+require 'forwardable'
 
 class Chef::Provider::RhnChannel < Chef::Provider::LWRPBase
   extend Forwardable

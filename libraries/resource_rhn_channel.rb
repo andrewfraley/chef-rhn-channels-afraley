@@ -8,8 +8,4 @@ class Chef::Resource::RhnChannel < Chef::Resource::LWRPBase
   attribute :channel_name, kind_of: String, name_attribute: true, required: true
   attribute :username, kind_of: String
   attribute :password, kind_of: String
-
-  def sensitive
-    true
-  end
 end
