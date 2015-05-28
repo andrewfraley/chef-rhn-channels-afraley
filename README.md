@@ -1,8 +1,10 @@
 rhn-channels cookbook
 =====================
-Manages RHN channel subscription using provided LWRP. This cookbook
-does not manage the RHN registration itself. Please use the
-[rhn cookbook][1] for that.
+[Library cookbook][0] which manages RHN channel subscriptions.
+
+This cookbook provides resource/providers which manages enrollment of
+channel subscriptions. It does not manage the RHN registration. Please
+use the [rhn cookbook][1] for that.
 
 # Usage
 This cookbook provides the Chef LWRP *rhn_channel* for managing
@@ -53,6 +55,7 @@ License and Authors
 * Author: [Tenyo Grozev][3] (tenyo.grozev@yale.edu)
 * Author: [John Bellone][4] (jbellone@bloomberg.net)
 
+[0]: http://blog.vialstudios.com/the-environment-cookbook-pattern/#thelibrarycookbook
 [1]: https://github.com/bflad/chef-rhn
 [2]: https://github.com/opscode-cookbooks/chef-vault
 [3]: https://github.com/andrewfraley

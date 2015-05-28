@@ -1,3 +1,11 @@
+#
+# Cookbook: rhn-channels
+# License: MIT
+#
+# Copyright 2014, 2015 Andy Fraley
+# Copyright 2015 Bloomberg Finance L.P.
+#
+
 case node['platform_version'].to_i
 when 5
   default['rhn-channels']['optional'] = nil
