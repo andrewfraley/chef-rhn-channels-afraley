@@ -12,13 +12,12 @@ require 'poise'
 # @since 2.0.0
 class Chef::Resource::RhnChannel < Chef::Resource
   include Poise(fused: true)
-  actions(:enable, :disable)
   provides(:rhn_channel)
+  actions(:enable, :disable)
 
   attribute(:channel_name,
             kind_of: String,
-            name_attribute: true,
-            cannot_be: :empty)
+            name_attribute: true)
   attribute(:username,
             kind_of: [String, NilClass],
             default: nil)
@@ -31,7 +30,7 @@ class Chef::Resource::RhnChannel < Chef::Resource
     options['-u'] = username unless username.nil?
     options['-p'] = password unless password.nil?
     options['-c'] = channel_name
-    ['rhn-channel', args, options.map { |k, v| "#{k}='#{v}'" } ].flatten.join(' ')
+    ['rhn-channel', args, options.map { |k, v| "#{k}='#{v}'" }].flatten.join(' ')
   end
 
   def channel_enabled?

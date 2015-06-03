@@ -1,10 +1,5 @@
 source 'https://rubygems.org'
 
-group :integration, :development, :test do
-  gem 'halite', git: 'https://github.com/poise/halite'
-  gem 'poise', git: 'https://github.com/poise/poise'
-end
-
 group :lint do
   gem 'rubocop'
 end
