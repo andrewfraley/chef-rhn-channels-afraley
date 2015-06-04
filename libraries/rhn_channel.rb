@@ -10,8 +10,8 @@ require 'poise'
 # Fused resource/provider for managing rhn-channel subscriptions.
 #
 # @since 2.0.0
-class Chef::Resource::RhnChannel < Chef::Resource::LWRPBase
-  self.resource_name = 'rhn_channel'
+class Chef::Resource::RhnChannel < Chef::Resource
+  include Poise(fused: true)
   provides(:rhn_channel)
   actions(:enable, :disable)
 
@@ -36,24 +36,24 @@ class Chef::Resource::RhnChannel < Chef::Resource::LWRPBase
   def channel_enabled?
     "rhn-channel -l | grep '#{channel_name}'"
   end
-end
 
-class Chef::Provider::RhnChannel < Chef::Provider::LWRPBase
-  provides(:rhn_channel)
-
-  def action_enable
-    execute "#{new_resource.name} :create #{new_resource.channel_name}" do
-      sensitive true
-      command new_resource.command('-a')
-      not_if new_resource.channel_enabled?
+  action(:enable) do
+    notifying_block do
+      execute "#{new_resource.name} :create #{new_resource.channel_name}" do
+        sensitive true
+        command new_resource.command('-a')
+        not_if new_resource.channel_enabled?
+      end
     end
   end
 
-  def action_disable
-    execute "#{new_resource.name} :delete #{new_resource.channel_name}" do
-      sensitive true
-      command new_resource.command('-r')
-      only_if new_resource.channel_enabled?
+  action(:disable) do
+    notifying_block do
+      execute "#{new_resource.name} :delete #{new_resource.channel_name}" do
+        sensitive true
+        command new_resource.command('-r')
+        only_if new_resource.channel_enabled?
+      end
     end
   end
 end
