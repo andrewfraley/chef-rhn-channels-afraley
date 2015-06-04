@@ -43,6 +43,7 @@ class Chef::Resource::RhnChannel < Chef::Resource
         sensitive true
         command new_resource.command('-a')
         not_if new_resource.channel_enabled?
+        guard_interpreter :default
       end
     end
   end
@@ -53,6 +54,7 @@ class Chef::Resource::RhnChannel < Chef::Resource
         sensitive true
         command new_resource.command('-r')
         only_if new_resource.channel_enabled?
+        guard_interpreter :default
       end
     end
   end

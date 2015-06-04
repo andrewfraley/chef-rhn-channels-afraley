@@ -29,6 +29,7 @@ class Chef::Resource::RhnSubscription < Chef::Resource
       execute "#{new_resource.name} :create #{new_resource.channel_name}" do
         command "subscription-manager repos --enable='#{new_resource.channel_name}'"
         not_if new_resource.channel_enabled?
+        guard_interpreter :default
       end
     end
   end
@@ -38,6 +39,7 @@ class Chef::Resource::RhnSubscription < Chef::Resource
       execute "#{new_resource.name} :delete #{new_resource.channel_name}" do
         command "subscription-manager repos --disable='#{new_resource.channel_name}'"
         only_if new_resource.channel_enabled?
+        guard_interpreter :default
       end
     end
   end
