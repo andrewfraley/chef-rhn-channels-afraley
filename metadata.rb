@@ -1,8 +1,15 @@
-name             'rhn-channels'
-maintainer       'Andy Fraley'
-maintainer_email 'andrew.fraley@gmail.com'
-license          'MIT'
-description      'Installs/Configures rhn-channels'
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-supports 'redhat', ">= 6.0"
-version          '1.2.0'
+name 'rhn-channels'
+maintainer 'John Bellone'
+maintainer_email 'jbellone@bloomberg.net'
+license 'MIT'
+description 'Manages channel subscriptions to RHN satellite network.'
+long_description 'Manages channel subscriptions to RHN satellite network.'
+version '2.1.0'
+source_url 'https://github.com/johnbellone/rhn-channels-cookbook'
+issues_url 'https://github.com/johnbellone/rhn-channels-cookbook/issues'
+
+supports 'redhat', '>= 5.0'
+
+depends 'poise'
+suggests 'rhn'
+suggests 'chef-vault'
